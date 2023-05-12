@@ -228,14 +228,14 @@ console.log(iText.replace(/i/gi, "")); //Lorem psum dolor st amet, consectetur a
 
 //**Ekrandan bir eded daxil edin ve bu ededin palindrom olub olmadigini yoxlayan alqorithm yazin. */
 
-const palindromNumStr = prompt("Enter a number");
-const palindromNum = parseInt(palindromNumStr);
+const inputOrder = prompt(
+  "Enter an order to check whether is palindrome or not"
+);
+//Split ile array bolurem cunku reverse array metodudur arraylarda isleyir. Reverse ile ters dondururem.
+const reversedOrder = inputOrder.split("").reverse().join("");
 
-if (
-  !isNaN(palindromNum) &&
-  palindromNum.toString().split("").reverse().join("") === palindromNumStr
-) {
-  console.log(`${palindromNum} is palindrom number`);
+if (inputOrder === reversedOrder) {
+  console.log(`${inputOrder} is a palindrome`);
 } else {
-  console.log(`${palindromNumStr} is not palindrom number`);
+  console.log(`${inputOrder} is not a palindrome`);
 }
